@@ -6,7 +6,7 @@
     <title>Đăng ký tài khoản</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
-        /* CSS tạm thời để nhìn cho gọn mắt */
+
         body { font-family: Arial, sans-serif; display: flex; justify-content: center; margin-top: 50px; }
         .form-container { border: 1px solid #ccc; padding: 20px; border-radius: 8px; width: 300px; }
         .form-group { margin-bottom: 15px; }
@@ -29,6 +29,11 @@
             <div class="form-group">
                 <label for="username">Tên đăng nhập:</label>
                 <input type="text" id="username" name="username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="fullname">Họ và tên:</label>
+                <input type="text" id="fullname" name="fullname" required>
             </div>
 
             <div class="form-group">
