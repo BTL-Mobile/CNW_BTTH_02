@@ -1,4 +1,6 @@
 <?php
+require_once 'config/Database.php';
+
 class Lesson {
     private $conn;
 
@@ -13,10 +15,14 @@ class Lesson {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function create($course_id, $title, $content, $order) {
-        $sql = "INSERT INTO lessons (course_id, title, content, `order`, created_at) VALUES (?, ?, ?, ?, NOW())";
+    // --- CẬP NHẬT: Thêm $video_url vào hàm create ---
+    public function create($course_id, $title, $content, $video_url, $order) {
+        $sql = "INSERT INTO lessons (course_id, title, content, video_url, `order`, created_at) 
+                VALUES (?, ?, ?, ?, ?, NOW())";
         $stmt = $this->conn->prepare($sql);
-        return $stmt->execute([$course_id, $title, $content, $order]);
+        return $stmt->execute([$course_id, $title, $content, $video_url, $order]);
     }
+    
+    // (Bạn nên thêm hàm update, delete tương tự nếu cần)
 }
-?>
+?> 
